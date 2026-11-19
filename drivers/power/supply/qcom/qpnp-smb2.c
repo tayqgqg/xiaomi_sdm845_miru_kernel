@@ -37,7 +37,7 @@ static struct smb_params v1_params = {
 		.name	= "fast charge current",
 		.reg	= FAST_CHARGE_CURRENT_CFG_REG,
 		.min_u	= 0,
-		.max_u	= 3600000,
+		.max_u	= 4500000,
 		.step_u	= 25000,
 	},
 	.fv			= {
@@ -51,7 +51,7 @@ static struct smb_params v1_params = {
 		.name	= "usb input current limit",
 		.reg	= USBIN_CURRENT_LIMIT_CFG_REG,
 		.min_u	= 0,
-		.max_u	= 3200000,
+		.max_u	= 4000000,
 		.step_u	= 25000,
 	},
 	.icl_stat		= {
@@ -1447,8 +1447,7 @@ static int smb2_batt_get_prop(struct power_supply *psy,
 					      BATT_PROFILE_VOTER);
 		break;
 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT:
-		val->intval = get_client_vote(chg->fcc_votable,
-					      FG_ESR_VOTER);
+	    val->intval = get_effective_result(chg->fcc_votable);
 		break;
 	case POWER_SUPPLY_PROP_TECHNOLOGY:
 		val->intval = POWER_SUPPLY_TECHNOLOGY_LIPO;

@@ -328,32 +328,32 @@
 
 &pmi8998_charger {
 	qcom,usb-icl-ua = <2800000>;
-	qcom,fcc-max-ua = <3300000>;
-	qcom,fcc-low-temp-delta = <2970000>;
-	qcom,fcc-hot-temp-delta = <1650000>;
-	qcom,fcc-cool-temp-delta = <2310000>;
+	qcom,fcc-max-ua = <3500000>;
+	qcom,fcc-low-temp-delta = <300000>;
+	qcom,fcc-hot-temp-delta = <300000>;
+	qcom,fcc-cool-temp-delta = <300000>;
 	google,usb-port-tz-name = "xo-therm-adc";
 	qcom,auto-recharge-soc;
 	qcom,sw-jeita-enable;
 	qcom,dynamic-fv-enable;
 	qcom,thermal-mitigation
-				= <1800000 1600000 1400000 1200000 1000000 1000000 1000000>;
+				= <3000000 2800000 2600000 2400000 2200000 2000000 1500000>;
 	qcom,thermal-mitigation-dcp
 				= <1800000 1800000 1800000 1800000 1800000 1800000 1800000
 				   1800000 1800000 1800000 1800000 1800000 1600000 1400000
 				   1200000 1000000>;
 	qcom,thermal-mitigation-qc3
-				= <2800000 2725000 2575000 2425000 2275000 2125000 2000000
-				   1800000 1650000 1500000 1360000 1200000 1060000 900000
-				   752500 525000>;
+				= <3300000 3200000 3100000 3000000 2900000 2800000 2700000
+                   2600000 2500000 2400000 2200000 2000000 1800000 1500000
+                   1200000 1000000>;
 	qcom,thermal-mitigation-qc2
 				= <1625000 1625000 1625000 1625000 1625000 1525000 1425000
 				   1325000 1225000 1125000 10255000 925000 825000 725000
 				   625000 525000>;
 	qcom,thermal-mitigation-pd-base
-				= <3000000 2800000 2600000 2400000 2200000 2000000 1800000
-				1600000 1600000 1400000 1200000 1100000 1000000 900000
-				752500 525000>;
+				= <3300000 3200000 3100000 3000000 2900000 2800000 2700000
+                   2600000 2500000 2400000 2200000 2000000 1800000 1500000
+                   1200000 1000000>;
 };
 
 &pmi8998_fg {
@@ -366,7 +366,7 @@
 	qcom,fg-cutoff-current = <200>;
 	qcom,fg-empty-voltage = <3100>;
 	qcom,fg-jeita-hyst-temp = <2>;
-	qcom,fg-jeita-thresholds = <0 15 45 60>;
+	qcom,fg-jeita-thresholds = <0 15 75 85>;
 	qcom,fg-esr-clamp-mohms = <60>;
 	qcom,fg-batt-temp-delta = <6>;
 	qcom,battery-data = <&mtp_batterydata>;
